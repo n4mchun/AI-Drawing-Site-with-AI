@@ -30,8 +30,9 @@
         }
     </style>
     <script>
-        async function genImg() {
-            var promptText = document.querySelector('input').value;
+            async function genImg() {
+            var inputText = document.querySelector('input').value;
+            var promptText = prompt("생성할 이미지를 묘사해주세요", inputText);
             var data = {
                 "model": "image-alpha-001",
                 "prompt": promptText,
@@ -41,7 +42,7 @@
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": "Bearer Your_API" // API KEY 키 입력
+                    "Authorization": "Bearer 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" // API KEY 키 입력
                 },
                 body: JSON.stringify(data)
             })
